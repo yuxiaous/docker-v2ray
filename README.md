@@ -8,38 +8,24 @@ Recommended server: [bandwagonhost.com](https://bandwagonhost.com/aff.php?aff=39
 1. Install tools `yum install -y iperf3 vim git`
 2. `./setup-centos7.sh` which does the following
 
-### Add EPEL Repo
-```
-yum install -y epel-release
-```
+## 2. Ubuntu Setup
 
-### Install docker
-```
-yum install -y yum-utils device-mapper-persistent-data lvm2
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-yum install docker-ce
-systemctl start docker
-systemctl enable docker
-```
+1. Install tools `apt-get install -y vim git`
+2. `./setup-ubuntu16.sh` which does the following
 
-### Install docker compose
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-```
-
-## 2. Config
+## 3. Config
 
 Update `./configs/v2ray/config.json`
 
-- `client-uuid`
-- `client@example.com`
+- `<uuid>`
+- `<password>` if necessary
+- `<secret>` if necessary
 
 Update `./configs/Caddyfile`
 
 - Replace `localhost:8080` with real domain
 
-## 3. Start
+## 4. Start
 
 ```
 docker-compose up

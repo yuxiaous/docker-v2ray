@@ -2,7 +2,7 @@ localhost:8080 {
   log stdout
   errors stderr
   root /srv/web
-  proxy /graphql v2ray:3456 {
+  proxy /ray v2ray:3333 {
     websocket
     header_upstream -Origin
   }
